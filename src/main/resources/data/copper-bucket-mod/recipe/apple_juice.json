@@ -8,7 +8,7 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:carrot"
+      "item": "minecraft:apple"
     },
     "S": {
       "item": "minecraft:sugar"
@@ -18,7 +18,7 @@
     }
   },
   "result": {
-    "id": "copper-bucket-mod:carrot_juice",
+    "id": "copper-bucket-mod:apple_juice",
     "count": 1
   }
 }

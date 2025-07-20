@@ -14,11 +14,11 @@
       "item": "minecraft:sugar"
     },
     "C": {
-      "item": "copper-bucket-mod:copper_bucket"
+      "item": "copper-bucket-mod:ice_cream_bucket"
     }
   },
   "result": {
-    "id": "copper-bucket-mod:carrot_juice",
+    "id": "copper-bucket-mod:carrot_ice_cream",
     "count": 1
   }
 }

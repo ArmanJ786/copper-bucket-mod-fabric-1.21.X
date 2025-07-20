@@ -1,9 +1,10 @@
 package net.vjar.copperbucketmod;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.vjar.copperbucketmod.item.ModItems;
 import net.vjar.copperbucketmod.item.ModItemsGroups;
+import net.vjar.copperbucketmod.events.ModEntityInteractionHandler;
+import net.vjar.copperbucketmod.events.ModBlockInteractionHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +16,8 @@ public class CopperBucketMod implements ModInitializer {
 	public void onInitialize() {
 		ModItemsGroups.registerItemsGroups();
 		ModItems.registerModItems();
+		ModEntityInteractionHandler.register();
+		ModBlockInteractionHandler.register();
+
 	}
 }
