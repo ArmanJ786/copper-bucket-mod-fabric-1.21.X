@@ -8,7 +8,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.vjar.copperbucketmod.item.ModItems;
 
-
 public class ModEntityInteractionHandler {
     public static void register() {
         UseEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
@@ -18,16 +17,17 @@ public class ModEntityInteractionHandler {
                 if (heldItem.isOf(ModItems.COPPER_BUCKET)) {
                     ItemStack milkBucket = new ItemStack(ModItems.MILK_COPPER_BUCKET);
 
+                    world.playSound(null, player.getBlockPos(), SoundEvents.ITEM_BUCKET_FILL, SoundCategory.PLAYERS, 1.0F, 1.0F);
+
                     if (player.getAbilities().creativeMode) {
                         player.setStackInHand(hand, milkBucket);
                     } else {
                         heldItem.decrement(1);
                         if (!player.getInventory().insertStack(milkBucket)) {
-                            player.dropItem(milkBucket, false);
+                            player.setStackInHand(hand, milkBucket);
                         }
                     }
 
-                    world.playSound(null, player.getBlockPos(), SoundEvents.ITEM_BUCKET_FILL, SoundCategory.PLAYERS, 1.0F, 1.0F);
                     return ActionResult.SUCCESS;
                 }
             }
